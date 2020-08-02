@@ -2,45 +2,68 @@
 using namespace std;
 int main()
 {
-    int i,j,n,m;
+    int i,j,n,k;
     cout<<"Enter number of rows:";
     cin>>n;
-    cout<<"Enter number of columns:";
-    cin>>m;
     cout<<"\n";
-    for(i=1;i<=n;i++)
+    if(n<3)
     {
-        for(j=1;j<=m;j++)
+        cout<<"Invalid number";
+    }
+    else
+        if(n==3)
+    {
+        for(i=1;i<=5;i++)
         {
-            if(i==1||i==n)
+            if(i==1||i==5)
             {
-                if(j==1||j==2||j==(m-1)||j==m)
-                {
-                    cout<<" ";
-                }
-                else
-                    cout<<"*";
-            }
-            else
-                if(i==2||i==n-1)
-            {
-                if(j==2||j==m-1)
-                {
-                    cout<<"*";
-                }
-                else
-                    cout<<" ";
+                cout<<" *\n";
             }
             else
             {
-                if(j==1||j==m)
-            {
-                cout<<"*";
-            }
-            else
-                cout<<" ";
+            cout<<"* ";
+            cout<<"*\n";
             }
         }
-        cout<<"\n";
+    }
+    else
+    {
+        for(i=1;i<=n+2;i++)
+        {
+            if(i==1||i==n+2)
+            {
+                for(j=1;j<=2;j++)
+                {
+                    cout<<" ";
+                }
+                for(k=j;k<=n-2;k++)
+                {
+                    cout<<"*";
+                }
+                cout<<"\n";
+            }
+            else
+                if(i==2||i==n+1)
+            {
+                cout<<" ";
+                cout<<"*";
+                for(j=1;j<=n-4;j++)
+                {
+                    cout<<" ";
+                }
+                cout<<"*";
+                cout<<"\n";
+            }
+            else
+            {
+                cout<<"*";
+                for(j=2;j<n;j++)
+                {
+                    cout<<" ";
+                }
+                cout<<"*";
+                cout<<"\n";
+            }
+        }
     }
 }
