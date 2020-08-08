@@ -31,39 +31,7 @@ public:
             exit(0);
         }
     }
-    float getX1()
-    {
-        return x1;
-    }
-    float getY1()
-    {
-        return y1;
-    }
-    float getX2()
-    {
-        return x2;
-    }
-    float getY2()
-    {
-        return y2;
-    }
-    float getX3()
-    {
-        return x3;
-    }
-    float getY3()
-    {
-        return y3;
-    }
-    float getX4()
-    {
-        return x4;
-    }
-    float getY4()
-    {
-        return y4;
-    }
-    void Square(float x1,float y1,float x2,float y2,float x3,float y3,float x4,float y4)
+    void Square()
     {
         if(((x2-x1)==(x4-x3))&&((x4-x3)==(y1-y3))&&((y1-y3)==(y2-y4)))
         {
@@ -130,7 +98,7 @@ int main()
     cout<<"Enter bottom right coordinate(x4,y4):";
     cin>>x4>>y4;
     Rectangle r1(x1,y1,x2,y2,x3,y3,x4,y4);
-    r1.Square(x1,y1,x2,y2,x3,y3,x4,y4);
+    r1.Square();
     float length=r1.Length();
     cout<<"\nLength of Rectangle:"<<length;
     float width=r1.Width();
