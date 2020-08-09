@@ -57,12 +57,12 @@ int main()
     int l,w;
     cout<<"Enter Length for Rectangle2:";
     cin>>l;
-    r1.setLength(l);
+    r2.setLength(l);
     cout<<"Enter width for Rectangle2:";
     cin>>w;
-    r1.setWidth(w);
-    cout<<"Length for Rectangle2:"<<r1.getLength()<<endl;
-    cout<<"Width for Rectangle2:"<<r1.getWidth()<<endl;
-    cout<<"Area for Rectangle2:"<<r1.getArea()<<endl;
-    cout<<"Perimeter for Rectangle2:"<<r1.getPerimeter()<<endl;
+    r2.setWidth(w);
+    cout<<"Length for Rectangle2:"<<r2.getLength()<<endl;
+    cout<<"Width for Rectangle2:"<<r2.getWidth()<<endl;
+    cout<<"Area for Rectangle2:"<<r2.getArea()<<endl;
+    cout<<"Perimeter for Rectangle2:"<<r2.getPerimeter()<<endl;
 }
