@@ -267,9 +267,9 @@ void Rotate()
         }
     }
 }
-void Scaling(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4,int l,int w,int s)
+void Scaling(int l,int w,int s)
 {
-    if((l+2*s)<=25 && (w+2*s)<=25)
+    if(((l+(2*s))<23) && ((w+(2*s))<23))
     {
             x1=x1-s;
             y1=y1+s;
@@ -406,7 +406,7 @@ int main()
             break;
             case 2:cout<<"\nEnter scale Factor:";
                    cin>>scale;
-                   r1.Scaling(x1,y1,x2,y2,x3,y3,x4,y4,length,width,scale);
+                   r1.Scaling(length,width,scale);
             break;
             case 3:exit(0);
             break;
