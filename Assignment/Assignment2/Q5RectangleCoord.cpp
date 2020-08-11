@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 class Rectangle
 {
@@ -31,18 +32,35 @@ public:
             exit(0);
         }
     }
+
     void Square()
     {
-        if(((x2-x1)==(x4-x3))&&((x4-x3)==(y1-y3))&&((y1-y3)==(y2-y4)))
+        if(((sqrt(pow((x2-x1),2)+pow((y2-y1),2)))==(sqrt(pow((x4-x3),2)+pow((y4-y3),2))))&&((sqrt(pow((x4-x3),2)+pow((y4-y3),2)))==(sqrt(pow((x1-x3),2)+pow((y1-y3),2))))&&((sqrt(pow((x1-x3),2)+pow((y1-y3),2)))==(sqrt(pow((x2-x4),2)+pow((y2-y4),2)))))
         {
-            cout<<"It is a square!";
-            exit(0);
+            if(((sqrt(pow((x1-x4),2)+pow((y1-y4),2)))==(sqrt(pow((x2-x3),2)+pow((y2-y3),2)))))
+            {
+               cout<<"It is a square!";
+               exit(0);
+            }
+            else
+            {
+                cout<<"It is a Rhombus!";
+                exit(0);
+            }
         }
         else
         {
-            if(((x2-x1)==(x4-x3))&&((y1-y3)==(y2-y4)))
+            if(((sqrt(pow((x2-x1),2)+pow((y2-y1),2)))==(sqrt(pow((x4-x3),2)+pow((y4-y3),2))))&&((sqrt(pow((x1-x3),2)+pow((y1-y3),2)))==(sqrt(pow((x2-x4),2)+pow((y2-y4),2)))))
                {
-                   cout<<"It is a Rectangle!";
+                   if(((sqrt(pow((x1-x4),2)+pow((y1-y4),2)))==(sqrt(pow((x2-x3),2)+pow((y2-y3),2)))))
+                   {
+                        cout<<"It is a Rectangle!";
+                   }
+                   else
+                   {
+                       cout<<"It is a Parallelogram!";
+                       exit(0);
+                   }
                }
             else
                 {
@@ -53,29 +71,29 @@ public:
     }
     float Length()
     {
-        float l;
-        if((x2-x1)>(y1-y3))
+        float l1=(sqrt(pow((x2-x1),2)+pow((y2-y1),2)));
+        float l2=(sqrt(pow((x1-x3),2)+pow((y1-y3),2)));
+        if(l1>l2)
         {
-            l=x2-x1;
+            return l1;
         }
         else
         {
-            l=y1-y3;
+            return l2;
         }
-        return l;
     }
     float Width()
     {
-        float w;
-        if((y1-y3)<(x2-x1))
+        float w1=(sqrt(pow((x1-x3),2)+pow((y1-y3),2)));
+        float w2=(sqrt(pow((x2-x1),2)+pow((y2-y1),2)));
+        if(w1<w2)
         {
-            w=y1-y3;
+            return w1;
         }
         else
         {
-            w=x2-x1;
+            return w2;
         }
-        return w;
     }
     float Area(float l,float w)
     {
