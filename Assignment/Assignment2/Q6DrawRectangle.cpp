@@ -316,8 +316,9 @@ void Scaling(int l,int w,int s)
             x3=x3;
             y3=y3-s;
             y1=y1+s;
+            CheckCoord(y1);
             x2=x2+2*s;
-             CheckCoord(x2);
+            CheckCoord(x2);
         }
         else
             if((y3-s)<=0)
@@ -325,7 +326,7 @@ void Scaling(int l,int w,int s)
             y3=y3;
             x3=x3-s;
             y1=y1+2*s;
-             CheckCoord(y1);
+            CheckCoord(y1);
             x2=x2+s;
         }
         else
@@ -333,7 +334,9 @@ void Scaling(int l,int w,int s)
             x3=x3-s;
             y3=y3-s;
             y1=y1+s;
+            CheckCoord(y1);
             x2=x2+s;
+            CheckCoord(x2);
         }
             int i,j;
             for(i=25;i>=y1+1;i--)
