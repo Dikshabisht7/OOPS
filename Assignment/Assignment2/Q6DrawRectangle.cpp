@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 class Rectangle
 {
@@ -33,18 +34,35 @@ public:
             exit(0);
         }
     }
+
     void Square()
     {
-        if(((x2-x1)==(x4-x3))&&((x4-x3)==(y1-y3))&&((y1-y3)==(y2-y4)))
+        if(((sqrt(pow((x2-x1),2)+pow((y2-y1),2)))==(sqrt(pow((x4-x3),2)+pow((y4-y3),2))))&&((sqrt(pow((x4-x3),2)+pow((y4-y3),2)))==(sqrt(pow((x1-x3),2)+pow((y1-y3),2))))&&((sqrt(pow((x1-x3),2)+pow((y1-y3),2)))==(sqrt(pow((x2-x4),2)+pow((y2-y4),2)))))
         {
-            cout<<"It is a square!";
-            exit(0);
+            if(((sqrt(pow((x1-x4),2)+pow((y1-y4),2)))==(sqrt(pow((x2-x3),2)+pow((y2-y3),2)))))
+            {
+               cout<<"It is a square!";
+               exit(0);
+            }
+            else
+            {
+                cout<<"It is a Rhombus!";
+                exit(0);
+            }
         }
         else
         {
-            if(((x2-x1)==(x4-x3))&&((y1-y3)==(y2-y4)))
+            if(((sqrt(pow((x2-x1),2)+pow((y2-y1),2)))==(sqrt(pow((x4-x3),2)+pow((y4-y3),2))))&&((sqrt(pow((x1-x3),2)+pow((y1-y3),2)))==(sqrt(pow((x2-x4),2)+pow((y2-y4),2)))))
                {
-                   cout<<"It is a Rectangle!";
+                   if(((sqrt(pow((x1-x4),2)+pow((y1-y4),2)))==(sqrt(pow((x2-x3),2)+pow((y2-y3),2)))))
+                   {
+                        cout<<"It is a Rectangle!";
+                   }
+                   else
+                   {
+                       cout<<"It is a Parallelogram!";
+                       exit(0);
+                   }
                }
             else
                 {
@@ -53,37 +71,37 @@ public:
                 }
         }
     }
-    float Length()
+    int Length()
     {
-        float l;
-        if((x2-x1)>(y1-y3))
+        int l1=(sqrt(pow((x2-x1),2)+pow((y2-y1),2)));
+        int l2=(sqrt(pow((x1-x3),2)+pow((y1-y3),2)));
+        if(l1>l2)
         {
-            l=x2-x1;
+            return l1;
         }
         else
         {
-            l=y1-y3;
+            return l2;
         }
-        return l;
     }
     float Width()
     {
-        float w;
-        if((y1-y3)<(x2-x1))
+        int w1=(sqrt(pow((x1-x3),2)+pow((y1-y3),2)));
+        int w2=(sqrt(pow((x2-x1),2)+pow((y2-y1),2)));
+        if(w1<w2)
         {
-            w=y1-y3;
+            return w1;
         }
         else
         {
-            w=x2-x1;
+            return w2;
         }
-        return w;
     }
-    float Area(float l,float w)
+    int Area(int l,int w)
     {
         return (l*w);
     }
-    float Perimeter(float l,float w)
+    int Perimeter(int l,int w)
     {
         return (2*(l+w));
     }
@@ -103,7 +121,7 @@ public:
         {
             if(i==25)
             {
-                for(j=1;j<=25;j++)
+                for(j=0;j<=25;j++)
                 {
                     cout<<".";
                 }
@@ -113,7 +131,7 @@ public:
             else
             {
                cout<<".";
-               for(j=2;j<=24;j++)
+               for(j=1;j<=24;j++)
                {
                    cout<<" ";
                }
@@ -126,7 +144,7 @@ public:
             if(i==y1||i==y3)
             {
                 cout<<".";
-                for(j=2;j<=x3-1;j++)
+                for(j=1;j<=x3-1;j++)
                 {
                     cout<<" ";
                 }
@@ -143,7 +161,7 @@ public:
             else
             {
                 cout<<".";
-                for(j=2;j<=x3-1;j++)
+                for(j=1;j<=x3-1;j++)
                 {
                     cout<<" ";
                 }
@@ -160,11 +178,11 @@ public:
                 cout<<".\n";
             }
         }
-        for(i=y3-1;i>=1;i--)
+        for(i=y3-1;i>=0;i--)
         {
-            if(i==1)
+            if(i==0)
             {
-                for(j=1;j<=25;j++)
+                for(j=0;j<=25;j++)
                 {
                     cout<<".";
                 }
@@ -172,7 +190,7 @@ public:
             else
             {
                 cout<<".";
-                for(j=2;j<=24;j++)
+                for(j=1;j<=24;j++)
                 {
                     cout<<" ";
                 }
@@ -188,7 +206,7 @@ void Rotate()
         {
             if(i==25)
             {
-                for(j=1;j<=25;j++)
+                for(j=0;j<=25;j++)
                 {
                     cout<<".";
                 }
@@ -198,7 +216,7 @@ void Rotate()
             else
             {
                cout<<".";
-               for(j=2;j<=24;j++)
+               for(j=1;j<=24;j++)
                {
                    cout<<" ";
                }
@@ -211,7 +229,7 @@ void Rotate()
             if(i==x4||i==x3)
             {
                 cout<<".";
-                for(j=2;j<=y3-1;j++)
+                for(j=1;j<=y3-1;j++)
                 {
                     cout<<" ";
                 }
@@ -228,7 +246,7 @@ void Rotate()
             else
             {
                 cout<<".";
-                for(j=2;j<=y3-1;j++)
+                for(j=1;j<=y3-1;j++)
                 {
                     cout<<" ";
                 }
@@ -245,11 +263,11 @@ void Rotate()
                 cout<<".\n";
             }
         }
-        for(i=x3-1;i>=1;i--)
+        for(i=x3-1;i>=0;i--)
         {
-            if(i==1)
+            if(i==0)
             {
-                for(j=1;j<=25;j++)
+                for(j=0;j<=25;j++)
                 {
                     cout<<".";
                 }
@@ -257,7 +275,7 @@ void Rotate()
             else
             {
                 cout<<".";
-                for(j=2;j<=24;j++)
+                for(j=1;j<=24;j++)
                 {
                     cout<<" ";
                 }
@@ -267,24 +285,62 @@ void Rotate()
         }
     }
 }
+int CheckCoord(int x)
+{
+    if(x>=25)
+    {
+        cout<<"Limit Exceeded of Coordinates";
+        exit(0);
+    }
+    else
+    {
+        return x;
+    }
+}
 void Scaling(int l,int w,int s)
 {
-    if(((l+(2*s))<23) && ((w+(2*s))<23))
+    if(((l+(2*s))<25) && ((w+(2*s))<25))
     {
-            x1=x1-s;
+        if(((x3-s)<=0) && ((y3-s)<=0))
+        {
+            x3=x3;
+            y3=y3;
+            y1=y1+2*s;
+            CheckCoord(y1);
+            x2=x2+2*s;
+            CheckCoord(x2);
+        }
+        else
+            if((x3-s)<=0)
+        {
+            x3=x3;
+            y3=y3-s;
             y1=y1+s;
+            x2=x2+2*s;
+             CheckCoord(x2);
+        }
+        else
+            if((y3-s)<=0)
+        {
+            y3=y3;
+            x3=x3-s;
+            y1=y1+2*s;
+             CheckCoord(y1);
             x2=x2+s;
-            y2=y2+s;
+        }
+        else
+        {
             x3=x3-s;
             y3=y3-s;
-            x4=x4+s;
-            y4=y4-s;
+            y1=y1+s;
+            x2=x2+s;
+        }
             int i,j;
             for(i=25;i>=y1+1;i--)
             {
                 if(i==25)
                 {
-                    for(j=1;j<=25;j++)
+                    for(j=0;j<=25;j++)
                     {
                         cout<<".";
                     }
@@ -294,7 +350,7 @@ void Scaling(int l,int w,int s)
                 else
                 {
                    cout<<".";
-                   for(j=2;j<=24;j++)
+                   for(j=1;j<=24;j++)
                    {
                        cout<<" ";
                    }
@@ -307,7 +363,7 @@ void Scaling(int l,int w,int s)
                 if(i==y1||i==y3)
                 {
                     cout<<".";
-                    for(j=2;j<=x3-1;j++)
+                    for(j=1;j<=x3-1;j++)
                     {
                         cout<<" ";
                     }
@@ -324,28 +380,28 @@ void Scaling(int l,int w,int s)
                 else
                 {
                     cout<<".";
-                    for(j=2;j<=x3-1;j++)
+                    for(j=1;j<=x3-1;j++)
                     {
                         cout<<" ";
                     }
                     cout<<perichar;
-                    for(j=x3+1;j<=x4-1;j++)
+                    for(j=x3+1;j<=x2-1;j++)
                     {
                         cout<<fillchar;
                     }
                     cout<<perichar;
-                    for(j=x4+1;j<=24;j++)
+                    for(j=x2+1;j<=24;j++)
                     {
                         cout<<" ";
                     }
                     cout<<".\n";
                 }
             }
-            for(i=y3-1;i>=1;i--)
+            for(i=y3-1;i>=0;i--)
             {
-                if(i==1)
+                if(i==0)
                 {
-                    for(j=1;j<=25;j++)
+                    for(j=0;j<=25;j++)
                     {
                         cout<<".";
                     }
@@ -353,7 +409,7 @@ void Scaling(int l,int w,int s)
                 else
                 {
                     cout<<".";
-                    for(j=2;j<=24;j++)
+                    for(j=1;j<=24;j++)
                     {
                         cout<<" ";
                     }
@@ -382,9 +438,9 @@ int main()
     cin>>x4>>y4;
     Rectangle r1(x1,y1,x2,y2,x3,y3,x4,y4);
     r1.Square();
-    float length=r1.Length();
+    int length=r1.Length();
     cout<<"\nLength of Rectangle:"<<length;
-    float width=r1.Width();
+    int width=r1.Width();
     cout<<"\nWidth of Rectangle:"<<width;
     cout<<"\nArea of Rectangle:"<<r1.Area(length,width);
     cout<<"\nPerimeter of Rectangle:"<<r1.Perimeter(length,width);
@@ -397,22 +453,24 @@ int main()
     r1.Draw();
     do
     {
-        printf("\nMenu \n1-Rotate \n2-Scaling \n3-Exit");
-        printf("\nEnter your choice:");
-        scanf("%d",&ch);
+        cout<<"\nMenu \n1-Rotate \n2-Scaling \n3-Exit";
+        cout<<"\nEnter your choice:";
+        cin>>ch;
         switch(ch)
         {
-            case 1:r1.Rotate();
+            case 1:r1.setCoordinates(x1,y1,x2,y2,x3,y3,x4,y4);
+                   r1.Rotate();
             break;
             case 2:cout<<"\nEnter scale Factor:";
                    cin>>scale;
+                   r1.setCoordinates(x1,y1,x2,y2,x3,y3,x4,y4);
                    r1.Scaling(length,width,scale);
             break;
             case 3:exit(0);
             break;
             default: printf("Invalid Choice");
         }
-        printf("\nDo you want to continue:Y or N->");
-        scanf(" %c",&choice);
+        cout<<"\nDo you want to continue:Y or N->";
+        cin>>choice;
     }while(choice=='Y' || choice=='y');
 }
