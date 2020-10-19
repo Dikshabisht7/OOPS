@@ -82,16 +82,35 @@ public:
 
 int main()
 {
-    Trapezoid t(8,3,11,10,7);
+    int a,b1,b2,c,h;
+    cout<<"Enter first side of Trapezoid:";
+    cin>>a;
+    cout<<"Enter two parallel sides of Trapezoid:";
+    cin>>b1>>b2;
+    cout<<"Enter fourth side of Trapezoid:";
+    cin>>c;
+    cout<<"Enter height of trapezoid:";
+    cin>>h;
+    cout<<"\n\n";
+    Trapezoid t(a,b1,b2,c,h);
     t.calculateArea();
     t.calculatePer();
     cout<<"\n\n";
-    Square s(10);
+    int side;
+    cout<<"Enter side of Square:";
+    cin>>side;
+    cout<<"\n\n";
+    Square s(side);
     s.calculateArea();
     s.calculatePer();
     cout<<"\n\n";
-    Rectangle r(10,20);
+    int l,b;
+    cout<<"Enter length of Rectangle:";
+    cin>>l;
+    cout<<"Enter breadth of Rectangle:";
+    cin>>b;
+    cout<<"\n\n";
+    Rectangle r(l,b);
     r.calculateArea();
     r.calculatePer();
-
 }
