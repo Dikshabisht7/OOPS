@@ -6,7 +6,7 @@ public:
     {
         cout<<"Student Default Constructor"<<endl;
     }
-    Student(string name,int id,int total,int stotal)
+    Student(string name,int id)
     {
         cout<<"Name of Student:"<<name<<endl;
         cout<<"ID of Student:"<<id<<endl;
@@ -23,7 +23,7 @@ public:
     {
         cout<<"Marks Default Constructor"<<endl;
     }
-    Marks(string name,int id,int total,int stotal):Student(name,id,total,stotal)
+    Marks(string name,int id,int total,int stotal):Student(name,id)
     {
         cout<<"Total Marks in Academics:"<<total<<endl;
     }
@@ -39,7 +39,7 @@ public:
     {
         cout<<"Sports Default Constructor"<<endl;
     }
-    Sports(string name,int id,int total,int stotal):Student(name,id,total,stotal)
+    Sports(string name,int id,int total,int stotal):Student(name,id)
     {
         cout<<"Total Marks in Sports:"<<stotal<<endl;
     }
@@ -55,7 +55,7 @@ public:
     {
         cout<<"Result Default Constructor"<<endl;
     }
-    Result(string name,int id,int total,int stotal):Student(name,id,total,stotal),Marks(name,id,total,stotal),Sports(name,id,total,stotal)
+    Result(string name,int id,int total,int stotal):Student(name,id),Marks(name,id,total,stotal),Sports(name,id,total,stotal)
     {
         float avg;
         avg=(total+stotal)/2;
